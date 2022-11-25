@@ -9,6 +9,11 @@
 <h1>Создай свою шаверму!</h1>
 <img th:src="@{/images/taco.png}"/>
 <form method="POST" th:object="${taco}">
+
+    <span class="validationError"
+          th:if="${#fields.hasErrors('ingredients')}"
+          th:errors="*{ingredients}">Ingredient Error</span>
+
     <div class="grid">
         <div class="ingredient-group" id="wraps">
             <h3>Выберете лепёшку:</h3>
@@ -54,6 +59,9 @@
     <div>
         <h3>Назовите ваше творение шавермы:</h3>
         <input type="text" th:field="*{name}"/>
+        <span class="validationError"
+              th:if="${#fields.hasErrors('name')}"
+              th:errors="*{name}">Name Error</span>
         <br/>
         <button>Готово</button>
     </div>
