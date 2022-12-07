@@ -19,6 +19,6 @@ public class Taco {
 
     @NotNull
     @Size(min=1, message="Вы должны выбрать хотя-бы один ингредиент")
-    private List<Ingredient> ingredients;
+    private List<IngredientRef> ingredients;
 
 }
