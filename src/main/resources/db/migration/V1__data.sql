@@ -1,29 +1,29 @@
-insert into ingredients (id, name, type)
-values ('FLTO', 'Мучная лепёшка', 'WRAP');
-
-insert into ingredients (id, name, type)
-values ('COTO', 'Кукурузная лепёшка', 'WRAP');
-
-insert into ingredients (id, name, type)
-values ('GRBF', 'Говяжий фарш', 'PROTEIN');
-
-insert into ingredients (id, name, type)
-values ('FALA', 'Фалафель', 'PROTEIN');
-
-insert into ingredients (id, name, type)
-values ('TMTO', 'Нарезанные помидоры', 'VEGGIES');
-
-insert into ingredients (id, name, type)
-values ('ONIO', 'Лук', 'VEGGIES');
-
-insert into ingredients (id, name, type)
-values ('CHED', 'Сыр чеддер', 'CHEESE');
-
-insert into ingredients (id, name, type)
-values ('JACK', 'Монтерей Джек', 'CHEESE');
-
-insert into ingredients (id, name, type)
-values ('SLSA', 'Сальса', 'SAUCE');
-
-insert into ingredients (id, name, type)
-values ('SRCR', 'Сметана', 'SAUCE');
+-- insert into ingredients (id, name, type)
+-- values ('FLTO', 'Мучная лепёшка', 'WRAP');
+--
+-- insert into ingredients (id, name, type)
+-- values ('COTO', 'Кукурузная лепёшка', 'WRAP');
+--
+-- insert into ingredients (id, name, type)
+-- values ('GRBF', 'Говяжий фарш', 'PROTEIN');
+--
+-- insert into ingredients (id, name, type)
+-- values ('FALA', 'Фалафель', 'PROTEIN');
+--
+-- insert into ingredients (id, name, type)
+-- values ('TMTO', 'Нарезанные помидоры', 'VEGGIES');
+--
+-- insert into ingredients (id, name, type)
+-- values ('ONIO', 'Лук', 'VEGGIES');
+--
+-- insert into ingredients (id, name, type)
+-- values ('CHED', 'Сыр чеддер', 'CHEESE');
+--
+-- insert into ingredients (id, name, type)
+-- values ('JACK', 'Монтерей Джек', 'CHEESE');
+--
+-- insert into ingredients (id, name, type)
+-- values ('SLSA', 'Сальса', 'SAUCE');
+--
+-- insert into ingredients (id, name, type)
+-- values ('SRCR', 'Сметана', 'SAUCE');
