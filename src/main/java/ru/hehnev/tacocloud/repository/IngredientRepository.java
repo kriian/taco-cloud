@@ -1,11 +1,7 @@
 package ru.hehnev.tacocloud.repository;
 
+import org.springframework.data.repository.CrudRepository;
 import ru.hehnev.tacocloud.models.taco.Ingredient;
 
-import java.util.Optional;
-
-public interface IngredientRepository {
-    Iterable<Ingredient> findAll();
-    Optional<Ingredient> findById(String id);
-    Ingredient save(Ingredient ingredient);
+public interface IngredientRepository extends CrudRepository<Ingredient, String> {
 }

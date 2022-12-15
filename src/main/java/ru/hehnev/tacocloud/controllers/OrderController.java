@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import ru.hehnev.tacocloud.models.taco.TacoOrder;
+import ru.hehnev.tacocloud.repository.JdbcOrderRepository;
 import ru.hehnev.tacocloud.repository.OrderRepository;
 
 import javax.validation.Valid;
@@ -19,10 +20,12 @@ import javax.validation.Valid;
 public class OrderController {
 
     private OrderRepository orderRepository;
+    private JdbcOrderRepository jdbcOrderRepository;
 
     @Autowired
-    public OrderController(OrderRepository orderRepository) {
+    public OrderController(OrderRepository orderRepository, JdbcOrderRepository jdbcOrderRepository) {
         this.orderRepository = orderRepository;
+        this.jdbcOrderRepository = jdbcOrderRepository;
     }
 
     @GetMapping("/current")
@@ -39,7 +42,7 @@ public class OrderController {
         if (errors.hasErrors()) {
             return "orderForm";
         }
-        orderRepository.save(order);
+        jdbcOrderRepository.save(order);
         sessionStatus.setComplete();
         return "redirect:/";
     }

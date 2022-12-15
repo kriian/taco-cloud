@@ -1,6 +1,6 @@
 package ru.hehnev.tacocloud.repository;
 
-import org.springframework.asm.Type;
+import aj.org.objectweb.asm.Type;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -18,15 +18,15 @@ import java.util.Date;
 import java.util.List;
 
 @Repository
-public class JdbcOrderRepository implements OrderRepository {
-    private JdbcOperations jdbcOperations;
+public class JdbcOrderRepository {
+
+    private final JdbcOperations jdbcOperations;
 
     @Autowired
     public JdbcOrderRepository(JdbcOperations jdbcOperations) {
         this.jdbcOperations = jdbcOperations;
     }
 
-    @Override
     @Transactional
     public TacoOrder save(TacoOrder tacoOrder) {
         PreparedStatementCreatorFactory creatorFactory = new PreparedStatementCreatorFactory(
@@ -74,7 +74,7 @@ public class JdbcOrderRepository implements OrderRepository {
         return tacoOrder;
     }
 
-    private long saveTaco(Long orderId, int orderKey, Taco taco) {
+    private void saveTaco(Long orderId, int orderKey, Taco taco) {
         taco.setCreatedAt(new Date());
         PreparedStatementCreatorFactory creatorFactory = new PreparedStatementCreatorFactory(
                 "INSERT INTO taco " +
@@ -96,7 +96,6 @@ public class JdbcOrderRepository implements OrderRepository {
         long tacoId = (long) keyHolder.getKeys().get("id");
         taco.setId(tacoId);
         saveIngredientRefs(tacoId, taco.getIngredients());
-        return 0;
     }
 
     private void saveIngredientRefs(long tacoId, List<IngredientRef> ingredientsRefs) {
